@@ -1,0 +1,568 @@
+/* ===========================================
+   페이지별 스타일
+   =========================================== */
+
+/* 컨테이너 공통 스타일 */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+}
+
+/* 이미지 목록 페이지용 넓은 컨테이너 */
+.image-list-container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container h1 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container a:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container p {
+    font-size: 15px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* ===========================================
+   Slope.html (3D 경사로 모델) 스타일
+   =========================================== */
+
+.slope-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.input-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    width: 220px;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* ===========================================
+   Grad.html (기울기 측정) 스타일
+   =========================================== */
+
+.grad-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* 그리드 스타일 */
+.grid-overlay {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 50px 50px;
+    background-position: 0 0;
+    background-image:
+      linear-gradient(to right, #000 1px, transparent 1px),
+      linear-gradient(to bottom, #000 1px, transparent 1px);
+    opacity: 0.4;
+    z-index: 10;
+}
+
+/* 비디오 스타일 */
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* 캔버스 스타일 */
+#overlay-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: auto;
+    background: transparent;
+}
+
+/* 컨트롤 패널 스타일 */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controls button {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.controls input[type="range"] {
+    width: 150px;
+}
+
+.controls label {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* 정보 패널 스타일 */
+.info-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 저장 버튼 스타일 */
+.save-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+}
+
+.save-controls button {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #2196F3;
+}
+
+.save-controls button:hover {
+    background-color: #1976D2;
+}
+
+/* ===========================================
+   업로드 폼 스타일
+   =========================================== */
+
+.upload-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* Select 드롭다운 개선 */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form-group select:hover {
+    border-color: #007bff;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* 이미지 미리보기 */
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+    max-height: 200px;
+    overflow: visible;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 120px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.file-info {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* 폼 액션 버튼 */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* 업로드 진행 상태 */
+.upload-progress {
+    text-align: center;
+    padding: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #007bff;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+/* ===========================================
+   이미지 목록 필터 스타일
+   =========================================== */
+
+.filter-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: end;
+    justify-content: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.filter-group label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.refresh-button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    height: fit-content;
+}
+
+.refresh-button:hover {
+    background-color: #138496;
+}
+
+.loading-section {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.image-count {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* 네비게이션 */
+.navigation {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.nav-link {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* 커스텀 드롭다운 스타일 */
+.form-group select option {
+    padding: 10px 12px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+}
+
+.form-group select option:hover {
+    background-color: #f0f8ff;
+    color: #007bff;
+}
+
+.form-group select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* 브라우저별 select 화살표 제거 */
+.form-group select::-ms-expand {
+    display: none;
+}
+
+/* Firefox용 select 스타일 */
+@-moz-document url-prefix() {
+    .form-group select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
+}
+
+/* 모바일 브라우저 호환성 강화 */
+@media (max-width: 768px) {
+    .form-group {
+        position: relative;
+        width: 100%;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    
+    /* iOS Safari 전용 수정 */
+    @supports (-webkit-touch-callout: none) {
+        .form-group select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-position: calc(100% - 15px) 50%;
+            padding-right: 45px;
+        }
+    }
+}

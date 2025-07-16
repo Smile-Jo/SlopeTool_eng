@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Image List - Slope Measurement Tool</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/image-grid.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/pagination.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script type="module" src="./src/imageList.js"></script>
+</head>
+<body class="image-list-page">
+
+    <div class="image-list-container">
+        <h1>Uploaded Image List</h1>
+        <div id="authCheck" class="auth-status">
+            <p>Checking login status...</p>
+        </div>
+
+        <!-- Filter and sorting options -->
+        <div id="filterSection" class="filter-section" style="display: none;">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="gradeFilter">Grade Filter:</label>
+                    <select id="gradeFilter">
+                        <option value="">All Grades</option>
+                        <option value="1">Grade 1</option>
+                        <option value="2">Grade 2</option>
+                        <option value="3">Grade 3</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="classFilter">Class Filter:</label>
+                    <select id="classFilter">
+                        <option value="">All Classes</option>
+                        <option value="1">Class 1</option>
+                        <option value="2">Class 2</option>
+                        <option value="3">Class 3</option>
+                        <option value="4">Class 4</option>
+                        <option value="5">Class 5</option>
+                        <option value="6">Class 6</option>
+                        <option value="7">Class 7</option>
+                        <option value="8">Class 8</option>
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortOrder">Sort:</label>
+                    <select id="sortOrder">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name">By Name</option>
+                        <option value="grade">By Grade</option>
+                    </select>
+                </div>
+
+                <button id="refreshButton" class="refresh-button">Refresh</button>
+            </div>
+        </div>
+
+        <!-- Loading status -->
+        <div id="loadingSection" class="loading-section" style="display: none;">
+            <p>Loading image list...</p>
+        </div>
+
+        <!-- Image list -->
+        <div id="imageListSection" class="image-list-section" style="display: none;">
+            <div id="imageCount" class="image-count"></div>
+            <div id="imageGrid" class="image-grid"></div>
+            
+            <!-- Pagination -->
+            <div id="pagination" class="pagination" style="display: none;">
+                <button id="prevPage" class="page-button">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextPage" class="page-button">Next</button>
+            </div>
+        </div>
+
+        <!-- Empty list message -->
+        <div id="emptyMessage" class="empty-message" style="display: none;">
+            <p>No uploaded images found.</p>
+            <a href="./imageUpload.html" class="upload-link">Upload First Image</a>
+        </div>
+
+        <!-- Return to main -->
+        <div class="navigation">
+            <a href="./index.html" class="nav-link">Return to Main</a>
+            <a href="./imageUpload.html" class="nav-link">Upload Image</a>
+        </div>
+    </div>
+
+    <!-- Image detail view modal -->
+    <div id="imageModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="modalImageContainer" class="modal-image-container"></div>
+            <div id="modalImageInfo" class="modal-image-info"></div>
+            <div class="modal-actions">
+                <button id="deleteImageButton" class="delete-button">Delete Image</button>
+                <button id="copyUrlButton" class="copy-button">Copy URL</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

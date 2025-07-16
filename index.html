@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Explore the Slopes Around Us</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script type="module" src="./src/auth.js"></script>
+</head>
+<body class="main-page">
+
+    <div class="container">
+        <h1>Explore the Slopes Around Us</h1>
+        
+        <!-- Login status display - moved below title -->
+        <div id="authStatus" class="auth-status-inline">
+            <div id="loginSection" style="display: block;">
+                <button id="loginButton" class="auth-button">Login with Google</button>
+            </div>
+            <div id="userSection" style="display: none;">
+                <div id="userInfo"></div>
+                <button id="logoutButton" class="auth-button">Logout</button>
+            </div>
+        </div>
+        
+        <!-- Main function buttons -->
+        <div class="main-buttons">
+            <a href="./Slope.html" class="main-link">3D Slope Model Observation</a>
+            <a href="./Grad.html" class="main-link">Slope Measurement</a>
+            
+            <!-- Newly added feature buttons -->
+            <div id="authenticatedFeatures" style="display: none;">
+                <a href="./imageUpload.html" class="main-link">Image Upload</a>
+                <a href="./imageList.html" class="main-link">View Image List</a>
+            </div>
+        </div>
+        
+        <p>Observe and measure slopes!</p>
+    </div>
+
+</body>
+</html>

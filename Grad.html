@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slope Measurement</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/sweetalert-override.css">
+    <script type="module" src="./src/Grad.js"></script>
+</head>
+<body class="grad-page">
+    <video id="video" autoplay playsinline muted></video>
+    <div class="grid-overlay"></div>
+    
+    <div class="controls">
+        <button id="resetButton">Reset</button>
+        <button id="lengthButton" style="display: none;">Measure Distance</button>
+        <button id="triangleButton" style="display: none;">Draw Triangle</button>
+        <button id="increaseGridButton">Grid +</button>
+        <button id="decreaseGridButton">Grid -</button>
+    </div>
+    
+    <div class="info-panel" id="infoPanel" style="display: none;">
+        <div id="dimensionDisplay">dx: 0px, dy: 0px</div>
+    </div>
+
+    <canvas id="overlay-canvas"></canvas>
+
+</body>
+</html>

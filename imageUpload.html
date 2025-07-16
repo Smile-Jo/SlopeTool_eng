@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Image Upload - Slope Measurement Tool</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/sweetalert-override.css">
+    <script type="module" src="./src/imageUpload.js"></script>
+</head>
+<body class="main-page">
+
+    <div class="container">
+        <h1>Slope Measurement Image Upload</h1>
+        
+        <!-- Authentication status check -->
+        <div id="authCheck" class="auth-status">
+            <p>Checking login status...</p>
+        </div>
+
+        <!-- Upload form -->
+        <form id="uploadForm" class="upload-form" style="display: none;">
+            <div class="form-group">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade" required>
+                    <option value="">Select Grade</option>
+                    <option value="1">Grade 1</option>
+                    <option value="2">Grade 2</option>
+                    <option value="3">Grade 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="classNumber">Class:</label>
+                <select id="classNumber" name="classNumber" required>
+                    <option value="">Select Class</option>
+                    <option value="1">Class 1</option>
+                    <option value="2">Class 2</option>
+                    <option value="3">Class 3</option>
+                    <option value="4">Class 4</option>
+                    <option value="5">Class 5</option>
+                    <option value="6">Class 6</option>
+                    <option value="7">Class 7</option>
+                    <option value="8">Class 8</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="imageFile">Select Image:</label>
+                <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+                <div id="imagePreview" class="image-preview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description (Optional):</label>
+                <textarea id="description" name="description" placeholder="Enter description for the image" rows="3"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="uploadButton" class="submit-button">Upload</button>
+                <button type="button" id="cancelButton" class="cancel-button">Cancel</button>
+            </div>
+        </form>
+
+        <!-- Upload progress status -->
+        <div id="uploadProgress" class="upload-progress" style="display: none;">
+            <p>Uploading image...</p>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Return to main -->
+        <div class="navigation">
+            <a href="./index.html" class="nav-link">Return to Main</a>
+            <a href="./imageList.html" class="nav-link">View Image List</a>
+        </div>
+    </div>
+
+</body>
+</html>
